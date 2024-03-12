@@ -16,7 +16,12 @@ class PropertySeeder extends Seeder
     {
         $propertyDataFile = database_path('./seeders/data/property-data.csv');
         $rows = CsvParserService::parse($propertyDataFile);
+        // insert current date and time to created_at column
+        $rows = array_map(function ($row) {
+            $row['created_at'] = now();
+            return $row;
+        }, $rows);
 
-        Property::upsert($rows, ['name'], ['price', 'bedrooms', 'bathrooms', 'storeys', 'garages']);
+        Property::upsert($rows, ['name'], ['price', 'bedrooms', 'bathrooms', 'storeys', 'garages', 'created_at']);
     }
 }
