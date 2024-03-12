@@ -23,8 +23,8 @@ class PropertyIndexRequest extends PaginationRequest
     {
         return array_merge(parent::rules(), [
             'name' => 'nullable|string',
-            'priceFrom' => 'nullable|numeric|lte:priceTo',
-            'priceTo' => 'nullable|numeric|gte:priceFrom',
+            'priceFrom' => 'nullable|numeric',
+            'priceTo' => 'nullable|numeric',
             'bedrooms' => 'nullable|integer',
             'bathrooms' => 'nullable|integer',
             'storeys' => 'nullable|integer',
