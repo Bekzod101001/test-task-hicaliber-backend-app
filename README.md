@@ -1,7 +1,7 @@
 ## Test Task
 
 backend wrapped up in sail for easy deployment.
-1. run `./vendor/bin/sail up` to start the server
+1. run `./vendor/bin/sail up -d` to start the server
 2. run `./vendor/bin/sail artisan migrate` to migrate the database
 3. run `./vendor/bin/sail artisan db:seed` to seed the database
 
