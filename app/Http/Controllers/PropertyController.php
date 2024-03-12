@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\PropertyIndexRequest;
+use App\Http\Resources\PaginatedItemsResource;
+use App\Http\Resources\PropertyResource;
 use App\Models\Property;
 use Illuminate\Http\Request;
 
@@ -37,7 +39,7 @@ class PropertyController extends Controller
             })
             ->paginate($request->per_page);
 
-        return response()->json($properties);
+        return response()->json(new PaginatedItemsResource($properties, PropertyResource::class));
     }
 
 }
