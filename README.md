@@ -1,3 +1,12 @@
+## Test Task
+
+backend wrapped up in sail for easy deployment.
+1. run `./vendor/bin/sail up` to start the server
+2. run `./vendor/bin/sail artisan migrate` to migrate the database
+3. run `./vendor/bin/sail artisan db:seed` to seed the database
+
+for preventing port conflicts, the server is running on port 9191, and db on 3315
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
